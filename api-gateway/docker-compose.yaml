@@ -1,7 +1,19 @@
 version: '3'
 services:
+  postgresdb:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=epiphyte
+      - POSTGRES_PASSWORD=3p1phyte-corp.com
+      - POSTGRES_DB=backendGo
+    volumes:
+      - ./scripts/dbInit:/docker-entrypoint-initdb.d/:ro
+    ports:
+      - '5432:5432'
+    networks:
+      - EpyphiteNet
+
   api_gateway:
-    container_name: api-gateway
     build:
       context: .
       dockerfile: Dockerfile-api
@@ -9,27 +21,29 @@ services:
     environment:
       - SERVER_PORT=3000
       - SERVER_TIMEOUT=60
+      - DB_NAME=backendGo
+      - DB_USER=epiphyte
+      - DB_PASSWORD=3p1phyte-corp.com
+      - DB_DSN=postgres://epiphyte:3p1phyte-corp.com@postgresdb:5432/backendGo?sslmode=disable&timezone=UTC
+      - DB_MIN_POOL=1
+      - DB_MAX_POOL=10
+      - OPENWEATHER_APIKEY=598eb70eacf1d53a1eec6ef3e6da25c2
     ports:
       - 3000:3000
     networks:
       - EpyphiteNet
     depends_on:
       - postgresdb
-  
-  postgresdb:
-    image: postgres:latest
-    container_name: postgres_container
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-      - DATABASE_HOST=${DB_HOST}
-    volumes:
-      - ./scripts/dbInit:/docker-entrypoint-initdb.d/:ro
-    ports:
-      - '5432:5432'
+
+  cronjob:
+    build:
+      context: .
+      dockerfile: Dockerfile-cron
+    restart: always
     networks:
       - EpyphiteNet
+    depends_on:
+      - api_gateway
 
 networks:
   EpyphiteNet:

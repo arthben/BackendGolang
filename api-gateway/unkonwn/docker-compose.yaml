@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - ./scripts/dbInit:/docker-entrypoint-initdb.d/:ro
+    ports:
+      - '5432:5432'
+
+  app:
+    container_name: gwAPI
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - SERVER_PORT=3000
+      - SERVER_TIMEOUT=60
+      - DB_HOST=db
+      - DB_MIN_POOL=1
+      - DB_MAX_POOL=10
+    ports:
+      - '3000:3000'

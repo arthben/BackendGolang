@@ -1,3 +1,27 @@
+# Running Instruction
+After clone, run this command:
+
+```bash
+cd api-gateway
+docker-compose up
+```
+
+Application will listen on
+```bash
+http://localhost:3000
+```
+
+Documentation (Swagger) can be accessed :
+```bash
+http://localhost:3000/swagger/index.html
+```
+
+There is scheduler container which is hit this endpoint will be trigger every hour to fetch the data and insert it in the PostgreSQL database
+
+```bash
+POST http://localhost:3000/api/v1/indego-data-fetch-and-store-it-db
+```
+
 ## Golang  Backend Challenge
 
 [Indego](https://www.rideindego.com) is Philadelphia's bike-sharing program, with many bike stations in the city.

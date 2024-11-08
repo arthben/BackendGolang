@@ -1,0 +1,77 @@
+{"level":"warn","service":"api-gateway","time":"2024-11-08T09:38:34+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T09:38:34+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T10:10:12+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T10:10:12+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:04:53+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:04:53+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:06:35+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:06:35+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:07:29+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:07:29+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:08:46+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:08:46+07:00","message":"SERVER STOP"}
+{"level":"error","service":"api-gateway","error":"Get \"api.openweathermap.org/data/2.5/weather?appid=e4d25c020947523c7c18b8e4af1ce00e&q=Philadelphia\": unsupported protocol scheme \"\"","time":"2024-11-08T12:10:09+07:00","message":"SendHTTPRequest -> client.Do"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:10:28+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:10:28+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T12:13:19+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T12:13:19+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:15:59+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:15:59+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:16:46+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:16:46+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:17:38+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:17:38+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:17:55+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:17:55+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:22:56+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:22:56+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:31:42+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:31:42+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:38:49+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:38:49+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T13:54:12+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T13:54:12+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T14:56:46+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T14:56:46+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:01:48+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:01:48+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:49:24+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:49:24+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:54:34+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:54:34+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:55:01+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:55:01+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:57:24+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:57:24+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T15:58:33+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T15:58:33+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:01:07+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:01:07+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:06:35+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:06:35+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:07:46+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:07:46+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:11:09+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:11:09+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:13:01+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:13:01+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:13:53+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:13:53+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:24:04+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:24:04+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:29:07+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:29:07+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:29:54+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:29:54+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:40:53+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:40:53+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:43:55+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:43:55+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:44:27+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:44:27+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:45:20+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:45:20+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:54:19+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:54:19+07:00","message":"SERVER STOP"}
+{"level":"warn","service":"api-gateway","time":"2024-11-08T16:57:19+07:00","message":"Server Closed Interrupted by OS"}
+{"level":"info","service":"api-gateway","time":"2024-11-08T16:57:19+07:00","message":"SERVER STOP"}

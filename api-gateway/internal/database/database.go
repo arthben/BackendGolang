@@ -2,6 +2,7 @@ package database
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/arthben/BackendGolang/api-gateway/internal/config"
@@ -24,6 +25,8 @@ type dbase struct {
 
 func NewPool(cfg *config.EnvParams) (DBService, error) {
 	// create connection and maintain pool internaly
+	fmt.Printf("cfg.DB.DSN: %v\n", cfg.DB.DSN)
+
 	db, err := sqlx.Connect("postgres", cfg.DB.DSN)
 	if err != nil {
 		return nil, err

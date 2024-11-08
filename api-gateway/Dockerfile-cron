@@ -1,0 +1,8 @@
+FROM python:3.11-slim-buster
+
+WORKDIR /build
+
+RUN pip install requests schedule
+COPY cron_job.py .
+# RUN chmod +x cron_job.py
+CMD ["python", "cron_job.py"]

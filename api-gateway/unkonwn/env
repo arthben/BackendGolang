@@ -1,11 +1,9 @@
-DB_HOST=postgresdb
+DB_HOST=127.0.0.1
 DB_DRIVER=postgres
 DB_USER=epiphyte
 DB_PASSWORD=@3p1phyte-corp.com
 DB_NAME=backendGo
 DB_PORT=5432
-DB_MIN_POOL=1
-DB_MAX_POOL=10
 
 DB_DSN="${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable&timezone=UTC"
 

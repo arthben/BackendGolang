@@ -28,6 +28,10 @@ type Handlers struct {
 	openweather *openweather.Service
 }
 
+func Barusaja()  {
+
+}
+
 func NewHandler(db database.DBService, cfg *config.EnvParams) *Handlers {
 
 	return &Handlers{

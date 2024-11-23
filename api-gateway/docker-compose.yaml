@@ -1,12 +1,14 @@
 version: '3'
 services:
   postgresdb:
-    image: postgres:latest
+    image: bitnami/postgresql:latest
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - POSTGRESQL_PASSWORD=${DB_PASSWORD}
+      - POSTGRESQL_POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRESQL_USERNAME=${DB_USER}
+      - POSTGRESQL_DATABASE=${DB_NAME}
     volumes:
+      - ./scripts/pg_data:/bitnami/postgresql
       - ./scripts/dbInit:/docker-entrypoint-initdb.d/:ro
     ports:
       - '5432:5432'

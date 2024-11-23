@@ -57,7 +57,7 @@ paths:
       produces:
       - application/json
       responses: {}
-      summary: Snapshot of all stations at a specified time
+      summary: Snapshot of one station at a specific time
       tags:
       - API
   /api/v1/stations/{kioskId}:
@@ -94,7 +94,7 @@ paths:
       produces:
       - application/json
       responses: {}
-      summary: Snapshot of one station at a specific time
+      summary: Snapshot of all stations at a specified time
       tags:
       - API
 swagger: "2.0"

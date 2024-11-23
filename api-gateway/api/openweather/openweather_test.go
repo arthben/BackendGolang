@@ -1,4 +1,4 @@
-package rideindego
+package openweather
 
 import (
 	"fmt"
@@ -12,13 +12,14 @@ import (
 )
 
 var (
-	db database.DBService
+	db  database.DBService
+	cfg *config.EnvParams
 )
 
 func TestSearch(t *testing.T) {
-	service := NewService(db)
+	service := NewService(db, cfg)
 	at := time.Date(2024, 11, 21, 0, 0, 0, 0, time.UTC)
-	resp, _, err := service.Search(at, "3009")
+	resp, _, err := service.Search(at)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 		return
@@ -29,7 +30,7 @@ func TestSearch(t *testing.T) {
 
 func TestFetch(t *testing.T) {
 	t.Run("test function FetchData", func(t *testing.T) {
-		service := NewService(db)
+		service := NewService(db, cfg)
 		httpCode, err := service.FetchAndStore()
 		if err != nil {
 			t.Errorf("Expected no error, but error occur %s\n", err)
@@ -46,11 +47,12 @@ func TestFetch(t *testing.T) {
 func init() {
 	os.Chdir("../..")
 
-	cfg, err := config.LoadConfig()
+	conf, err := config.LoadConfig()
 	if err != nil {
 		fmt.Printf("%v\n", err)
 		panic(0)
 	}
+	cfg = conf
 
 	repo, err := database.NewPool(cfg)
 	if err != nil {

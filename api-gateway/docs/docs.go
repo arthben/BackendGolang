@@ -46,7 +46,7 @@ const docTemplate = `{
                 "tags": [
                     "API"
                 ],
-                "summary": "Snapshot of all stations at a specified time",
+                "summary": "Snapshot of one station at a specific time",
                 "parameters": [
                     {
                         "type": "string",
@@ -75,7 +75,7 @@ const docTemplate = `{
                 "tags": [
                     "API"
                 ],
-                "summary": "Snapshot of one station at a specific time",
+                "summary": "Snapshot of all stations at a specified time",
                 "parameters": [
                     {
                         "type": "string",

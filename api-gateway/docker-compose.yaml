@@ -1,12 +1,14 @@
 version: '3'
 services:
   postgresdb:
-    image: postgres:latest
+    image: bitnami/postgresql:latest
     environment:
-      - POSTGRES_USER=epiphyte
-      - POSTGRES_PASSWORD=3p1phyte-corp.com
-      - POSTGRES_DB=backendGo
+      - POSTGRESQL_PASSWORD=${DB_PASSWORD}
+      - POSTGRESQL_POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRESQL_USERNAME=${DB_USER}
+      - POSTGRESQL_DATABASE=${DB_NAME}
     volumes:
+      - ./scripts/pg_data:/bitnami/postgresql
       - ./scripts/dbInit:/docker-entrypoint-initdb.d/:ro
     ports:
       - '5432:5432'
@@ -21,13 +23,10 @@ services:
     environment:
       - SERVER_PORT=3000
       - SERVER_TIMEOUT=60
-      - DB_NAME=backendGo
-      - DB_USER=epiphyte
-      - DB_PASSWORD=3p1phyte-corp.com
-      - DB_DSN=postgres://epiphyte:3p1phyte-corp.com@postgresdb:5432/backendGo?sslmode=disable&timezone=UTC
+      - DB_DSN=${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable&timezone=UTC
       - DB_MIN_POOL=1
       - DB_MAX_POOL=10
-      - OPENWEATHER_APIKEY=598eb70eacf1d53a1eec6ef3e6da25c2
+      - OPENWEATHER_APIKEY=${OPENWEATHER_APIKEY}
     ports:
       - 3000:3000
     networks:

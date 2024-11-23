@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"net/http"
+	"strconv"
 	"sync"
 	"time"
 
@@ -26,6 +27,10 @@ type Handlers struct {
 	router      *gin.Engine
 	rideindego  *rideindego.Service
 	openweather *openweather.Service
+}
+
+func Barusaja() {
+
 }
 
 func NewHandler(db database.DBService, cfg *config.EnvParams) *Handlers {
@@ -119,14 +124,20 @@ func (h *Handlers) FetchAndStoreIndego(c *gin.Context) {
 
 // FindKioskWithTime godoc
 // @Summary Snapshot of all stations at a specified time
-// @Description.markdown stations
+// @Description.markdown stationsKioskId
 // @Tags API
 // @Produce json
 // @Param Authorization header string true "Bearer secret_token_static"
 // @Param at            query  string true "ex: 2019-09-01T10:00:00Z"
-// @Router /api/v1/stations [get]
+// @Param kioskId       path   string true "ex: 3005"
+// @Router /api/v1/stations/{kioskId} [get]
 func (h *Handlers) FindKioskWithTime(c *gin.Context) {
 	kioskId := c.Param("kioskId")
+	if _, err := strconv.Atoi(kioskId); err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": "Invalid kioskId format"})
+		return
+	}
+
 	q := c.Query("at")
 	if len(q) == 0 {
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": "Invalid Request Parameter"})
@@ -139,20 +150,20 @@ func (h *Handlers) FindKioskWithTime(c *gin.Context) {
 		return
 	}
 
-	lastUpdate, jsonIndego, httpCode, err := h.rideindego.Find(at, kioskId)
+	jsonIndego, httpCode, err := h.rideindego.Search(at, kioskId)
 	if err != nil {
 		c.AbortWithStatusJSON(httpCode, gin.H{"error": err.Error()})
 		return
 	}
 
-	jsonWeather, httpCode, err := h.openweather.Find(at, "")
+	jsonWeather, httpCode, err := h.openweather.Search(at)
 	if err != nil {
 		c.AbortWithStatusJSON(httpCode, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"at":       lastUpdate,
+		"at":       jsonIndego.LastUpdated.UTC(),
 		"stations": jsonIndego,
 		"weather":  jsonWeather,
 	})
@@ -160,13 +171,12 @@ func (h *Handlers) FindKioskWithTime(c *gin.Context) {
 
 // FindSpecifTime godoc
 // @Summary Snapshot of one station at a specific time
-// @Description.markdown stationsKioskId
+// @Description.markdown stations
 // @Tags API
 // @Produce json
 // @Param Authorization header string true "Bearer secret_token_static"
 // @Param at            query  string true "ex: 2019-09-01T10:00:00Z"
-// @Param kioskId       path   string true "ex: 3005"
-// @Router /api/v1/stations/{kioskId} [get]
+// @Router /api/v1/stations [get]
 func (h *Handlers) FindSpecifTime(c *gin.Context) {
 	q := c.Query("at")
 	if len(q) == 0 {
@@ -180,13 +190,13 @@ func (h *Handlers) FindSpecifTime(c *gin.Context) {
 		return
 	}
 
-	_, jsonIndego, httpCode, err := h.rideindego.Find(at, "")
+	jsonIndego, httpCode, err := h.rideindego.Search(at, "")
 	if err != nil {
 		c.AbortWithStatusJSON(httpCode, gin.H{"error": err.Error()})
 		return
 	}
 
-	jsonWeather, httpCode, err := h.openweather.Find(at, "")
+	jsonWeather, httpCode, err := h.openweather.Search(at)
 	if err != nil {
 		c.AbortWithStatusJSON(httpCode, gin.H{"error": err.Error()})
 		return
